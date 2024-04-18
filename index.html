@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi dia Especial</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+</head>
+
+<body>
+
+  <header>
+    <a href="#" class="brand"><img src="logo.png" alt="" height="100px"></a>
+    <div class="menu-btn"></div>
+    <div class="navigation">
+      <div class="navigation-items">
+        <a href="#">Inicio</a>
+        <a href="#">About</a>
+        <a href="#">Explore</a>
+        <a href="#">Gallery</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="home">
+    <img src="imagenes/banner1.jpg" alt="" class="video-slide active">
+    <img src="imagenes/banner2.jpg" alt="" class="video-slide ">
+    <img src="imagenes/banner3.jpg" alt="" class="video-slide ">
+    <img src="imagenes/banner4.jpg" alt="" class="video-slide ">
+    <img src="imagenes/banner5.jpg" alt="" class="video-slide ">
+    <div class="content active">
+      <h1>Wonderful.<br><span>Island</span></h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+        laborum.</p>
+      <a href="#">Read More</a>
+    </div>
+    <div class="content">
+      <h1>Camping.<br><span>Enjoy</span></h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+        laborum.</p>
+      <a href="#">Read More</a>
+    </div>
+    <div class="content">
+      <h1>Adventures.<br><span>Off Road</span></h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+        laborum.</p>
+      <a href="#">Read More</a>
+    </div>
+    <div class="content">
+      <h1>Road Trip.<br><span>Together</span></h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+        laborum.</p>
+      <a href="#">Read More</a>
+    </div>
+    <div class="content">
+      <h1>Feel Nature.<br><span>Relax</span></h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+        laborum.</p>
+      <a href="#">Read More</a>
+    </div>
+    <div class="media-icons">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+    </div>
+    <div class="slider-navigation">
+      <div class="nav-btn active"></div>
+      <div class="nav-btn"></div>
+      <div class="nav-btn"></div>
+      <div class="nav-btn"></div>
+      <div class="nav-btn"></div>
+    </div>
+  </section>
+
+  <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function () {
+      // JavaScript para el menú de navegación responsive
+      const menuBtn = document.querySelector(".menu-btn");
+      const navigation = document.querySelector(".navigation");
+
+      menuBtn.addEventListener("click", () => {
+        menuBtn.classList.toggle("active");
+        navigation.classList.toggle("active");
+      });
+
+      // JavaScript para la navegación del slider de video
+      const btns = document.querySelectorAll(".nav-btn");
+      const slides = document.querySelectorAll(".video-slide");
+      const contents = document.querySelectorAll(".content");
+
+      let slideIndex = 0; // Índice de la diapositiva actual
+
+      const sliderNav = function (manual) {
+        btns.forEach((btn, index) => {
+          btn.classList.remove("active");
+          if (index === manual) btn.classList.add("active");
+        });
+
+        slides.forEach((slide, index) => {
+          slide.classList.remove("active");
+          if (index === manual) slide.classList.add("active");
+        });
+
+        contents.forEach((content, index) => {
+          content.classList.remove("active");
+          if (index === manual) content.classList.add("active");
+        });
+      }
+
+      const autoSlider = function () {
+        if (slideIndex === slides.length - 1) {
+          slideIndex = 0;
+        } else {
+          slideIndex++;
+        }
+        sliderNav(slideIndex);
+      };
+
+      // Iniciar el slider automático
+      let timer = setInterval(autoSlider, 5000); // Cambia las diapositivas cada 5 segundos
+
+      // Detener el slider automático cuando se hace clic en un botón de navegación manual
+      btns.forEach((btn, i) => {
+        btn.addEventListener("click", () => {
+          clearInterval(timer); // Detener el temporizador
+          slideIndex = i; // Actualizar el índice de la diapositiva actual
+          sliderNav(i);
+          timer = setInterval(autoSlider, 5000); // Reiniciar el temporizador
+        });
+      });
+    });
+  </script>
+
+
+
+</body>
+
+</html>
