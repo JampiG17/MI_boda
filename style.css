@@ -625,13 +625,13 @@ section {
   left: 0;
   width: 100%;
   height: 100%;
-  filter: drop-shadow(0 0 10px rgba(90, 134, 173, 18));
-  backdrop-filter: blur(10px);
-  /* Efecto de desenfoque para el fondo */
+  filter: drop-shadow(0 0 10px rgba(211, 157, 171, 8));
+  background: rgba(0, 0, 0, 0.5);
   z-index: 9999;
   overflow: auto;
   padding: 20px;
   box-sizing: border-box;
+  backdrop-filter: blur(10px);
 }
 
 .full-image:target {
@@ -644,7 +644,6 @@ section {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
-  /* Ajusta la imagen sin recortarla */
   margin: auto;
 }
 
@@ -653,14 +652,10 @@ section {
   top: 10px;
   right: 10px;
   font-size: 24px;
-  color: #5A86AD;
+  color: #fff;
   cursor: pointer;
   z-index: 99999;
   filter: drop-shadow(0 0 10px rgba(90, 134, 173, 18));
-}
-
-.close:hover {
-  color: #5A86AD;
 }
 
 

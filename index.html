@@ -20,7 +20,6 @@
         <a href="#Fecha">Fecha</a>
         <a href="#Novios">Novios</a>
         <a href="#Historia">Nuestra Historia</a>
-        <a href="#">Contact</a>
       </div>
     </div>
   </header>
@@ -145,12 +144,12 @@
       <div class="story">
         <h3>Primer Encuentro: El Destino nos Cruzó</h3>
         <article>
-          <p>Nuestro camino comenzó en un día soleado de verano, cuando nuestros ojos se encontraron por primera vez
-            en un evento de tecnología. En ese momento, algo especial sucedió; una chispa de conexión que ninguno de
-            nosotros pudo ignorar. A partir de entonces, nuestras vidas se entrelazaron de una manera mágica. Cada
-            conversación, cada risa compartida, nos acercaba más, como si el destino estuviera trazando un camino para
-            unirnos. En esta etapa de nuestra historia, descubrimos que teníamos más en común de lo que jamás
-            hubiéramos imaginado, y cada día juntos era una nueva aventura.</p>
+          <p>Nuestro camino comenzó hace 11 años en una tarde soleada, cuando nuestros ojos se encontraron por primera
+            vez en una fiesta para celebrar tu cumpleaños. Desde ese momento, nuestras vidas se entrelazaron en un baile
+            mágico, donde cada palabra compartida y cada risa intercambiada nos llevaba más cerca el uno del otro,
+            revelando nuestras diferencias como notas en una melodía perfecta. Cada día se convertía en una nueva
+            aventura, con tú como mi compañera de viaje, descubriendo juntos los secretos del universo y los rincones
+            más íntimos de nuestros corazones.</p>
         </article>
         <img src="imagenes/novios.webp" alt="Primer Encuentro" class="story-image">
       </div>
@@ -159,10 +158,15 @@
       <div class="story">
         <h3>Creciendo Juntos: Superando Desafíos</h3>
         <article>
-          <p>A medida que nuestra relación florecía, enfrentamos juntos los desafíos que la vida nos presentaba. Hubo
-            momentos de incertidumbre y dificultades, pero con amor, apoyo mutuo y determinación, superamos cada
-            obstáculo que se interponía en nuestro camino. Aprendimos a confiar el uno en el otro, a apoyarnos en los
-            momentos difíciles y a celebrar juntos los momentos de alegría.</p>
+          <p>
+            A medida que nuestros corazones se abrían el uno al otro, enfrentamos juntos los desafíos que la vida nos
+            presentaba, incluyendo mi timidez, que disolviste con tu amor y comprensión. A pesar de los obstáculos y las
+            veces que nuestros caminos se separaron, el universo conspiró para reunirnos una vez más, como si nuestros
+            destinos estuvieran entrelazados por hilos invisibles de amor. Cuando finalmente nos reencontramos, fue como
+            si el tiempo se detuviera para permitirnos volver a encontrarnos en un abrazo cálido y familiar. Poco a
+            poco, con cada mirada y cada palabra compartida, aprendimos a confiar el uno en el otro de una manera más
+            profunda y auténtica. Descubrimos en el otro un refugio seguro en los momentos difíciles y un cómplice en la
+            aventura de la vida.</p>
         </article>
         <img src="imagenes/novios.webp" alt="Creciendo Juntos" class="story-image">
       </div>
@@ -171,10 +175,11 @@
       <div class="story">
         <h3>Compromiso Eterno: El Comienzo de Nuestra Aventura</h3>
         <article>
-          <p>Hoy, estamos aquí, en el umbral de un nuevo capítulo de nuestra historia. El día de nuestra boda marca el
-            inicio de una aventura que estamos emocionados de emprender juntos. Con nuestros corazones llenos de amor
-            y promesas de por vida, nos comprometemos a seguir construyendo una vida llena de amor, risas y felicidad
-            compartida.</p>
+          <p>Hoy, nos encontramos en el umbral de un nuevo capítulo de nuestra historia. El día de nuestra boda marca el
+            comienzo de una aventura que estamos emocionados de emprender juntos. Con nuestros corazones rebosantes de
+            amor y nuestras almas llenas de promesas eternas, nos comprometemos a seguir construyendo una vida colmada
+            de amor, risas y felicidad compartida. Que este día sea el primero de muchos momentos inolvidables que
+            compartiremos mientras caminamos de la mano hacia nuestro futuro juntos.</p>
         </article>
         <img src="imagenes/novios.webp" alt="Compromiso Eterno" class="story-image">
       </div>
@@ -281,13 +286,38 @@
 
   <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", function () {
-      // JavaScript para el menú de navegación responsive
-      const menuBtn = document.querySelector(".menu-btn");
-      const navigation = document.querySelector(".navigation");
+      const menuBtn = document.querySelector('.menu-btn');
+      const navigation = document.querySelector('.navigation');
+      const menuLinks = document.querySelectorAll('.navigation-items a');
 
-      menuBtn.addEventListener("click", () => {
-        menuBtn.classList.toggle("active");
-        navigation.classList.toggle("active");
+      // Función para abrir/cerrar el menú
+      function toggleMenu() {
+        menuBtn.classList.toggle('active');
+        navigation.classList.toggle('active');
+      }
+
+      // Evento de clic en el botón de menú
+      menuBtn.addEventListener('click', function (event) {
+        event.stopPropagation(); // Evita que el clic se propague al documento
+        toggleMenu();
+      });
+
+      // Evento de clic en cualquier parte del documento
+      document.addEventListener('click', function (event) {
+        const isClickInsideMenu = navigation.contains(event.target);
+        const isClickInsideMenuBtn = menuBtn.contains(event.target);
+
+        // Si el menú está abierto y el clic no está dentro del menú ni en el botón de menú, cierra el menú
+        if (navigation.classList.contains('active') && !isClickInsideMenu && !isClickInsideMenuBtn) {
+          toggleMenu();
+        }
+      });
+
+      // Evento de clic en los enlaces del menú
+      menuLinks.forEach(function (menuLink) {
+        menuLink.addEventListener('click', function () {
+          toggleMenu(); // Cierra el menú al hacer clic en un enlace
+        });
       });
 
       // JavaScript para la navegación del slider de video
@@ -374,10 +404,6 @@
 
     // Actualizar la cuenta regresiva cada segundo
     setInterval(actualizarCuentaRegresiva, 1000);
-
-
-
-
   </script>
 
 
