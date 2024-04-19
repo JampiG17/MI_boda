@@ -2,12 +2,17 @@
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Mirza:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #afbfa4;
 }
 
 a {
@@ -317,10 +322,17 @@ section {
   filter: drop-shadow(0 0 10px rgba(211, 157, 171, 8));
 }
 
+.contador h1 {
+  font-size: 80px;
+  font-weight: bold;
+  font-family: "Tangerine";
+  filter: drop-shadow(0 0 10px rgba(90, 134, 173, 8));
+}
+
 .contador h3 {
   font-size: 25px;
   font-family: "Patrick Hand";
-  filter: drop-shadow(0 0 10px rgba(211, 157, 171, 8));
+  filter: drop-shadow(0 0 10px rgba(90, 134, 173, 8));
 }
 
 .countdown {
@@ -350,6 +362,11 @@ section {
   .contador {
     padding: 10px;
   }
+
+  .contador h1 {
+    font-size: 50px;
+  }
+
   .countdown-item {
     margin: 15px 0;
   }
@@ -357,4 +374,364 @@ section {
   .countdown-item span {
     font-size: 12px;
   }
+}
+
+/*Novio section*/
+.novios-section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px 200px;
+}
+
+.imagen-container {
+  width: 300px;
+  margin-right: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.imagen-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+}
+
+.info-container {
+  max-width: 400px;
+}
+
+.info-container h2 {
+  font-size: 80px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-family: "Tangerine";
+  filter: drop-shadow(0 0 10px rgba(90, 134, 173, 18));
+}
+
+.info-container p {
+  font-size: 18px;
+  line-height: 1.5;
+  text-align: justify;
+  font-family: "Mirza";
+}
+
+/* Estilos para la sección de la pareja en dispositivos móviles */
+@media screen and (max-width: 768px) {
+  .novios-section {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .imagen-container {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .info-container {
+    text-align: center;
+    max-width: none;
+  }
+
+  .info-container h2 {
+    font-size: 40px;
+    margin-bottom: 5px;
+  }
+
+  .info-container p {
+    font-size: 16px;
+  }
+}
+
+/*seccion de historia*/
+.container_historia {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.container_historia h2 {
+  text-align: center;
+  color: #333;
+  font-family: "Tangerine";
+  font-size: 80px;
+}
+
+.story {
+  margin-bottom: 40px;
+}
+
+.story-image {
+  width: 100%;
+  max-width: 600px;
+  display: block;
+  margin: 20px auto;
+  border-radius: 10px;
+}
+
+.story h3 {
+  font-family: "Patrick Hand";
+  font-size: 30px;
+  text-align: center;
+}
+
+.story p {
+  text-align: justify;
+  line-height: 1.5;
+  color: #666;
+  font-family: "Mirza";
+}
+
+/*galeria fotos*/
+.container_fotos {
+  width: 1200px;
+  padding: 20px;
+  max-width: calc(100vw - 40px);
+  margin: auto;
+}
+
+.container_fotos h1 {
+  font-family: "Patrick Hand";
+}
+
+.container_fotos p {
+  font-family: "Mirza";
+  color: #000;
+}
+
+.bigTitle {
+  font-family: 'Lobster', cursive;
+  font-size: xx-large;
+  text-align: center;
+  margin: 50px 0;
+}
+
+.bigTitle .des {
+  font-size: large;
+  max-width: 500px;
+  margin: 10px auto;
+  color: #ffffff4D;
+}
+
+.transport ul {
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto;
+  column-gap: 20px;
+}
+
+.transport li {
+  text-align: center;
+  color: #ffffff4D;
+}
+
+.transport li i {
+  display: block;
+  margin-bottom: 20px;
+  font-size: xxx-large;
+  color: #fff;
+}
+
+.zoom {
+  transform: scale(1);
+  transition: 0.5s;
+}
+
+.zoom:hover {
+  transform: scale(1.2);
+}
+
+.checkin {
+  display: grid;
+  grid-template-columns: 24.25% 24.25% 24.25% 24.25%;
+  column-gap: 1%;
+  grid-template-rows: 300px 300px;
+  row-gap: 10px;
+}
+
+.checkin .item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.checkin img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.checkin .item .content {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
+.checkin .item .content .des {
+  opacity: 0.7;
+}
+
+.checkin .item:nth-child(1) {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.checkin .item:nth-child(2) {
+  grid-column-start: 3;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+.fare {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  column-gap: 30px;
+}
+
+.fare .item {
+  background-color: #030D1F;
+  border-radius: 20px;
+  text-align: center;
+  padding: 50px;
+  box-shadow: 0 0 10px #000;
+}
+
+.fare .item i {
+  font-size: xx-large;
+  margin-bottom: 20px;
+}
+
+.fare .item .price {
+  font-family: 'Lobster', cursive;
+  color: yellow;
+  font-size: xx-large;
+}
+
+.fare .item ul {
+  padding: 0;
+  list-style: none;
+}
+
+.fare .item ul li {
+  padding: 10px;
+}
+
+/* Estilos para la imagen completa */
+.full-image {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 0 10px rgba(90, 134, 173, 18));
+  backdrop-filter: blur(10px);
+  /* Efecto de desenfoque para el fondo */
+  z-index: 9999;
+  overflow: auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.full-image:target {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.full-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  /* Ajusta la imagen sin recortarla */
+  margin: auto;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  color: #5A86AD;
+  cursor: pointer;
+  z-index: 99999;
+  filter: drop-shadow(0 0 10px rgba(90, 134, 173, 18));
+}
+
+.close:hover {
+  color: #5A86AD;
+}
+
+
+.checkin .item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.checkin img {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s;
+}
+
+.checkin .item:hover img {
+  transform: scale(1.2);
+}
+
+@media screen and (max-width: 820px) {
+  .checkin {
+    grid-template-columns: auto auto;
+    grid-template-rows: 300px 300px 300px 300px;
+  }
+
+  .checkin .item:nth-child(2) {
+    grid-column-start: unset;
+    grid-column-end: unset;
+    grid-row-start: unset;
+    grid-row-end: unset;
+  }
+
+  .checkin .item:nth-child(1) {
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+
+  .checkin .item:nth-child(5) {
+    grid-column-start: 2;
+    grid-row-start: 3;
+    grid-row-end: 5;
+  }
+
+  .fare {
+    column-gap: 5px;
+  }
+
+  .fare .item {
+    padding: 15px;
+  }
+
+}
+
+@media screen and (max-width: 767px) {
+  .checkin {
+    grid-template-columns: 100%;
+    grid-template-rows: 300px 300px 300px 300px 300px 300px;
+  }
+
+  .checkin .item:nth-child(1),
+  .checkin .item:nth-child(5) {
+    grid-column-start: unset;
+    grid-column-end: unset;
+    grid-row-start: unset;
+    grid-row-end: unset;
+  }
+
+  .fare {
+    grid-template-columns: 100%;
+  }
+
 }
