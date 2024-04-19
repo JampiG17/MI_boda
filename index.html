@@ -12,7 +12,7 @@
 <body>
 
   <header>
-    <a href="#" class="brand"><img src="logo.png" alt="" height="100px"></a>
+    <a href="#" class="brand"><img src="logo.png" alt="J&N"></a>
     <div class="menu-btn"></div>
     <div class="navigation">
       <div class="navigation-items">
@@ -61,8 +61,10 @@
         amor que nos une.</p>
     </div>
     <div class="media-icons">
-      <a href="#"><i class="fa-solid fa-location-dot" style="color: #000000;"></i></a>
-      <a href="#"><i class="fa-solid fa-bell-concierge" style="color: #000000;"></i></a>
+      <a href="https://maps.app.goo.gl/phho7osfseqxEEBJ9" target="_blank"><i class="fa-solid fa-church"
+          style="color: #fff;"></i></a>
+      <a href="https://maps.app.goo.gl/FYDfKuEGqiF4GX2n8" target="_blank"><i class="fa-solid fa-bell-concierge"
+          style="color: #fff;"></i></a>
     </div>
     <div class="slider-navigation">
       <div class="nav-btn active"></div>
@@ -70,6 +72,38 @@
       <div class="nav-btn"></div>
       <div class="nav-btn"></div>
       <div class="nav-btn"></div>
+    </div>
+  </section>
+  <section class="contador">
+    <div>
+      <img src="imagenes\Contador_abajo.png" alt="">
+    </div>
+    <div>
+      <div>
+        <h3>Nos vamos a casar 12 de octubre de 2024</h3>
+      </div>
+      <br>
+      <div class="countdown">
+        <div class="countdown-item">
+          <span id="days">00</span>
+          <span class="countdown-text">Días</span>
+        </div>
+        <div class="countdown-item">
+          <span id="hours">00</span>
+          <span class="countdown-text">Horas</span>
+        </div>
+        <div class="countdown-item">
+          <span id="minutes">00</span>
+          <span class="countdown-text">Minutos</span>
+        </div>
+        <div class="countdown-item">
+          <span id="seconds">00</span>
+          <span class="countdown-text">Segundos</span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <img src="imagenes\Contador_arriba.png" alt="">
     </div>
   </section>
 
@@ -130,6 +164,48 @@
         });
       });
     });
+
+    /*contador*/
+    // Función para obtener la fecha y hora actual en el formato deseado
+    function obtenerFechaHoraActual() {
+      const fechaHoraActual = new Date();
+      return fechaHoraActual.getTime(); // Obtiene el tiempo en milisegundos
+    }
+
+    // Función para obtener la fecha y hora objetivo (12 de octubre de 2024 a las 12 del mediodía)
+    function obtenerFechaHoraObjetivo() {
+      const fechaHoraObjetivo = new Date('October 12, 2024 12:00:00');
+      return fechaHoraObjetivo.getTime(); // Obtiene el tiempo en milisegundos
+    }
+
+    // Función para actualizar la cuenta regresiva
+    function actualizarCuentaRegresiva() {
+      const tiempoActual = obtenerFechaHoraActual();
+      const tiempoObjetivo = obtenerFechaHoraObjetivo();
+      const diferencia = tiempoObjetivo - tiempoActual;
+
+      // Calcular días, horas, minutos y segundos restantes
+      const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+      const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+      const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+
+      // Mostrar la cuenta regresiva en el elemento HTML
+      document.getElementById('days').textContent = dias < 10 ? '0' + dias : dias;
+      document.getElementById('hours').textContent = horas < 10 ? '0' + horas : horas;
+      document.getElementById('minutes').textContent = minutos < 10 ? '0' + minutos : minutos;
+      document.getElementById('seconds').textContent = segundos < 10 ? '0' + segundos : segundos;
+    }
+
+    // Llamar a la función para actualizar la cuenta regresiva inicialmente
+    actualizarCuentaRegresiva();
+
+    // Actualizar la cuenta regresiva cada segundo
+    setInterval(actualizarCuentaRegresiva, 1000);
+
+
+
+
   </script>
 
 
